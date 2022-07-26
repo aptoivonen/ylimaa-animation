@@ -1,4 +1,4 @@
-const jp3 = document.getElementById("symbol-jp3");
+const jp3 = document.getElementById("jp3");
 
 const tl = gsap.timeline();
 
