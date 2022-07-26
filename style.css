@@ -48,6 +48,29 @@ body {
   border-radius: 5px;
 }
 
+.info-section {
+  padding: 1rem;
+}
+
+.unit-info {
+  padding: 0.5rem 1rem;
+}
+
+.unit-info.german {
+  color: white;
+  background: #888;
+}
+
+.unit-info.finnish {
+  color: white;
+  background: blue;
+}
+
+.unit-list img {
+  width: 70px;
+  height: auto;
+}
+
 .footer {
   margin-top: auto;
   padding: 1rem;
