@@ -1,0 +1,21 @@
+{
+  "name": "ylimaa",
+  "version": "1.0.0",
+  "description": "Create an animation about the battle of Ylimaa.",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aptoivonen/ylimaa-animation.git"
+  },
+  "keywords": [],
+  "author": "Aleksi Toivonen, Eero Toivonen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aptoivonen/ylimaa-animation/issues"
+  },
+  "homepage": "https://github.com/aptoivonen/ylimaa-animation#readme"
+}
