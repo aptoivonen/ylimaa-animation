@@ -37,7 +37,7 @@ body {
   margin: 1rem 0;
 }
 
-.map-container svg {
+.map {
   position: absolute;
   inset: 0;
   display: block;
@@ -48,11 +48,11 @@ body {
   border-radius: 5px;
 }
 
-.map-symbol-container {
-  overflow: auto;
-}
-
-.main-footer {
+.footer {
   padding: 1rem;
   text-align: center;
+}
+
+.german .ss1 {
+  fill: #888;
 }
