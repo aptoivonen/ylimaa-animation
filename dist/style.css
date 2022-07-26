@@ -37,7 +37,7 @@ body {
   margin: 1rem 0;
 }
 
-.map-container svg {
+.map-container object {
   position: absolute;
   inset: 0;
   display: block;
