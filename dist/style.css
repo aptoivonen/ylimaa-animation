@@ -53,7 +53,7 @@ body {
 }
 
 .unit-info {
-  padding-left: 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .unit-info.german {
