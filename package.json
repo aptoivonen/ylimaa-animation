@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/aptoivonen/ylimaa-animation/issues"
   },
-  "homepage": "https://github.com/aptoivonen/ylimaa-animation#readme"
+  "homepage": "https://github.com/aptoivonen/ylimaa-animation#readme",
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
+  }
 }
