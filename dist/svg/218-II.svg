@@ -3,6 +3,7 @@
 .bs0 {fill:gray;fill-rule:nonzero;stroke:none;}
 .ps0 {fill:none;stroke:gray;stroke-width:26;}
 .ss1 {fill:rgb(128,224,255);stroke:black;stroke-width:40;}
+.ss1 {fill:#888;stroke:black;stroke-width:40;}
 .bs1 {fill:black;fill-rule:nonzero;stroke:none;}
 .ps1 {fill:none;stroke:black;stroke-width:26;}
 .ts0 {font-family:Arial;font-size:2517px;font-weight:bold;fill:gray;text-anchor:middle;}
