@@ -15,44 +15,56 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+  padding: 0 1rem;
 }
 
 .main-header {
-  padding: 1rem;
-  color: #fffffe;
-  text-align: center;
-  background: #262626;
+  padding-bottom: 1rem;
 }
 
 .main-heading {
   margin: 0;
-  font-size: 3rem;
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
   letter-spacing: -2px;
+  color: #fffffe;
+  background: #262626;
 }
 
 .main-header-date {
   display: block;
   margin-top: 1rem;
-  font-size: 1.5rem;
+  padding: 0 1rem;
 }
 
 .map-container {
-  margin: 0 0 20px;
+  position: relative;
+  margin: 0 0 24px;
 }
 
 .map {
-  display: block;
   height: 100%;
   width: auto;
   border: 10px solid #666;
   border-radius: 5px;
 }
 
+.controls {
+  position: absolute;
+  left: 15px;
+  bottom: -5px;
+  display: flex;
+  justify-content: center;
+  padding: 0.3rem;
+  background: lightblue;
+}
+
 .info-section {
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 .unit-info {
+  margin: 0 0 1rem;
   padding: 0.5rem 1rem;
 }
 
