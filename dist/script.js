@@ -7,8 +7,8 @@ const UNITS = [
   { id: "g218III", data: "svg/218-III.svg", x: 1100, y: 830 },
   { id: "gII8", data: "svg/II-8.svg", x: 80, y: 450 },
   { id: "g21816", data: "svg/218-16.svg", x: 1030, y: 950 },
-  { id: "jp2", data: "svg/jp2.svg", x: -999, y: -999 },
-  { id: "jp3", data: "svg/jp3.svg", x: 250, y: 1000 },
+  { id: "jp2", data: "svg/jp2.svg", x: 370, y: 800, opacity: 0 },
+  { id: "jp3", data: "svg/jp3.svg", x: 270, y: 1000 },
   { id: "jp4", data: "svg/jp4.svg", x: -999, y: -999 },
   { id: "jp5", data: "svg/jp5.svg", x: 1070, y: 1020 },
 ];
@@ -37,10 +37,12 @@ const STEP_DURATION = 1;
 const START_DATE_STRING = "October 7, 1944 06:00:00";
 let step = 1;
 const animationSteps = [
-  { jp3: { x: 100, y: -100 } },
-  { jp3: { x: 0, y: -200 } },
-  {},
-  { jp3: { x: -50, y: -300 }, g21816: { x: 0, y: -50 } },
+  { jp3: { x: 0, y: -50 } }, // 7.10 klo 7
+  { jp3: { x: 0, y: -100 } },
+  { jp3: { x: 0, y: -150 } },
+  { jp3: { x: 0, y: -200 }, g21816: { x: 0, y: -50 } },
+  { jp3: { x: 0, y: -220 }, jp2: { opacity: 1 } }, // 7.10 klo 11
+  { jp3: { x: 0, y: -250 }, jp2: { x: 0, y: -50 } },
 ];
 
 let tl;
@@ -53,16 +55,25 @@ function makeTimeline() {
   tl = gsap.timeline({
     default: { duration: STEP_DURATION },
   });
+  UNITS.forEach((unit) => {
+    if ("opacity" in unit) {
+      tl.set("#" + unit.id, { opacity: unit.opacity });
+    }
+  });
 }
 
 function takeStep() {
   step++;
   if (!stepsLeft()) return;
   updateBattleTime();
-  animationData = animationSteps[step - 2];
+  const animationData = animationSteps[step - 2];
   if (animationData) {
     Object.entries(animationData).forEach(([unitId, delta]) => {
-      tl.to("#" + unitId, { x: delta.x, y: delta.y }, `step-${step}`);
+      tl.to(
+        "#" + unitId,
+        { x: delta.x, y: delta.y, opacity: delta.opacity },
+        `step-${step}`
+      );
     });
   }
 }
