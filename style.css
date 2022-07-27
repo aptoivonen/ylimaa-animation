@@ -1,3 +1,9 @@
+:root {
+  --yellow-color: #f6e1b9;
+  --german-color: #888;
+  --finnish-color: rgb(128, 224, 255);
+}
+
 html,
 body {
   height: 100%;
@@ -15,55 +21,91 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+  padding: 0 1rem;
 }
 
 .main-header {
-  padding: 1rem;
-  color: #fffffe;
-  text-align: center;
-  background: #262626;
+  padding-bottom: 1rem;
 }
 
 .main-heading {
   margin: 0;
-  font-size: 3rem;
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
   letter-spacing: -2px;
+  color: #444;
+  background: var(--yellow-color);
 }
 
 .main-header-date {
   display: block;
   margin-top: 1rem;
-  font-size: 1.5rem;
+  padding: 0 1rem;
 }
 
 .map-container {
-  margin: 0 0 20px;
+  position: relative;
 }
 
 .map {
   display: block;
-  height: 100%;
+  height: calc(100% - 2 * 10px);
   width: auto;
-  border: 10px solid #666;
-  border-radius: 5px;
+  border: 10px solid var(--yellow-color);
+  overflow: hidden;
+}
+
+.controls {
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+  display: flex;
+  justify-content: center;
+  padding: 0.3rem;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background: var(--yellow-color);
+}
+
+.battle-time {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  display: block;
+  width: 7ch;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background: var(--yellow-color);
 }
 
 .info-section {
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 .unit-info {
+  position: relative;
+  margin: 0 0 1rem;
   padding: 0.5rem 1rem;
+  background: var(--yellow-color);
 }
 
-.unit-info.german {
-  color: white;
-  background: #888;
+.unit-info::before {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  width: 0.7rem;
+  height: 0.7rem;
+  content: "";
 }
 
-.unit-info.finnish {
-  color: white;
-  background: blue;
+.unit-info.german::before {
+  background: var(--german-color);
+}
+
+.unit-info.finnish::before {
+  background: var(--finnish-color);
 }
 
 .unit-list img {
@@ -87,10 +129,14 @@ body {
 }
 
 .unit-symbol {
-  width: 200px;
+  width: 140px;
   height: auto;
 }
 
 .german .ss1 {
   fill: #888;
+}
+
+.hide:not(.show) {
+  display: none;
 }

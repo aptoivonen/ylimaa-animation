@@ -20,24 +20,33 @@
       <header class="main-header">
         <h1 class="main-heading">Ylimaan taistelu</h1>
         <time class="main-header-date" datetime="1944-10-06"
-          >6. - 9.10.1944</time
+          >Ylimaa, Lappi, Suomi 6. - 9.10.1944</time
         >
       </header>
 
       <section class="info-section">
         <div>
-          <p class="unit-info german">218. Gebirgsjägerregiment</p>
+          <p class="unit-info german">218. Gebirgs-jäger-regiment</p>
           <p>Komentaja: eversti Emil Schuler</p>
           <div class="unit-list">
-            <img src="svg/hq-218.svg" alt="218 headquarters icon" />
+            <img
+              src="svg/218.svg"
+              alt="218 regiment icon"
+              style="margin-bottom: 1rem"
+            />
+            <img src="svg/218-I.svg" alt="218-I batallion icon" />
             <img src="svg/218-II.svg" alt="218-II batallion icon" />
+            <img src="svg/218-III.svg" alt="218-III batallion icon" />
+            <img src="svg/218-16.svg" alt="218-16 company icon" />
           </div>
         </div>
         <div>
           <p class="unit-info finnish">Jääkäriprikaati</p>
           <p>Komentaja: ?</p>
           <div class="unit-list">
+            <img src="svg/jp2.svg" alt="2. Jääkäripataljoona icon" />
             <img src="svg/jp3.svg" alt="3. Jääkäripataljoona icon" />
+            <img src="svg/jp4.svg" alt="4. Jääkäripataljoona icon" />
             <img src="svg/jp5.svg" alt="5. Jääkäripataljoona icon" />
           </div>
         </div>
@@ -49,13 +58,15 @@
     </main>
 
     <section class="map-container">
+      <span class="battle-time" id="battle-time"></span>
       <svg
         class="map"
+        id="map"
         x="0"
         y="0"
-        width="1327px"
-        height="1152px"
-        viewbox="0 0 1327 1152"
+        width="1307px"
+        height="1137px"
+        viewbox="0 0 1307 1137"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
       >
@@ -70,43 +81,24 @@
           ></object>
         </foreignObject>
 
-        <!-- Symbols -->
-        <foreignObject x="700" y="280" class="symbol-wrapper">
-          <object
-            id="hq-218"
-            class="unit-symbol"
-            data="svg/hq-218.svg"
-            type="image/svg+xml"
-          ></object>
-        </foreignObject>
-
-        <foreignObject x="800" y="730" class="symbol-wrapper">
-          <object
-            id="218-II"
-            class="unit-symbol"
-            data="svg/218-II.svg"
-            type="image/svg+xml"
-          ></object>
-        </foreignObject>
-
-        <foreignObject x="250" y="950" class="symbol-wrapper">
-          <object
-            id="jp3"
-            class="unit-symbol"
-            data="svg/jp3.svg"
-            type="image/svg+xml"
-          ></object>
-        </foreignObject>
-
-        <foreignObject x="980" y="990" class="symbol-wrapper">
-          <object
-            id="jp5"
-            class="unit-symbol"
-            data="svg/jp5.svg"
-            type="image/svg+xml"
-          ></object>
-        </foreignObject>
+        <!-- JS adds units here -->
       </svg>
+      <div class="controls">
+        <button class="control-btn" id="restart-btn" type="button"><<</button>
+        <button class="control-btn" id="back-btn" type="button" disabled>
+          <
+        </button>
+        <button class="control-btn hide show" id="play-btn" type="button">
+          PLAY
+        </button>
+        <button class="control-btn hide" id="pause-btn" type="button">
+          PAUSE
+        </button>
+        <button class="control-btn" id="step-btn" type="button">></button>
+        <button class="control-btn" id="end-btn" type="button" disabled>
+          >>
+        </button>
+      </div>
     </section>
   </body>
 </html>
