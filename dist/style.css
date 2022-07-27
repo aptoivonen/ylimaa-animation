@@ -106,3 +106,7 @@ body {
 .german .ss1 {
   fill: #888;
 }
+
+.hide:not(.show) {
+  display: none;
+}
