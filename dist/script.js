@@ -33,11 +33,106 @@ UNITS.forEach((unit) => {
 });
 
 // Animation
-// const tl = gsap.timeline();
+const MAX_STEPS = 10;
+const STEP_DURATION = 1;
+let step = 1;
+const unitEls = Object.fromEntries(
+  UNITS.map((unit) => [unit.id, document.getElementById(unit.id)])
+);
 
-// const jp3 = document.getElementById("jp3");
-// tl.to(jp3, { duration: 10, x: 0, y: -250 }).to(jp3, {
-//   duration: 3,
-//   x: 30,
-//   y: -350,
-// });
+const tl = gsap.timeline();
+
+const animationSteps = [
+  { jp3: { x: 100, y: -100 } },
+  { jp3: { x: 0, y: -200 } },
+  { jp3: { x: -50, y: -300 }, "218-16": { x: 0, y: -50 } },
+  {},
+];
+
+let intervalId;
+let isPlaying = false;
+
+function takeStep() {
+  if (!stepsLeft()) return;
+  animationData = animationSteps[step - 1];
+  if (animationData) {
+    Object.entries(animationData).forEach(([unitId, coord]) => {
+      const unitEl = unitEls[unitId];
+      tl.to(
+        unitEl,
+        { duration: STEP_DURATION, x: coord.x, y: coord.y },
+        `step-${step}`
+      );
+    });
+  }
+  step++;
+}
+
+function play() {
+  isPlaying = true;
+  intervalId = setInterval(() => {
+    if (!stepsLeft()) {
+      clearInterval(intervalId);
+      forwardButton.disabled = true;
+    }
+    takeStep();
+  }, 1000 * STEP_DURATION);
+}
+
+function pause() {
+  isPlaying = false;
+  if (intervalId) clearInterval(intervalId);
+}
+
+function forward() {
+  if (!stepsLeft()) return;
+  takeStep();
+}
+
+function restart() {
+  step = 1;
+  forwardButton.disabled = false;
+}
+
+function stepsLeft() {
+  return step < MAX_STEPS;
+}
+
+function playHandler() {
+  playButton.classList.remove("show");
+  pauseButton.classList.add("show");
+  if (stepsLeft()) {
+    play();
+  }
+}
+
+function pauseHandler() {
+  playButton.classList.add("show");
+  pauseButton.classList.remove("show");
+  pause();
+}
+
+function forwardHandler() {
+  pauseHandler();
+  if (!stepsLeft()) {
+    forwardButton.disabled = true;
+    return;
+  }
+  takeStep();
+}
+
+function restartHandler() {
+  pauseHandler();
+  restart();
+}
+
+// Set up controls
+const playButton = document.getElementById("play-btn");
+const pauseButton = document.getElementById("pause-btn");
+const restartButton = document.getElementById("restart-btn");
+const forwardButton = document.getElementById("step-btn");
+
+playButton.addEventListener("click", playHandler);
+pauseButton.addEventListener("click", pauseHandler);
+restartButton.addEventListener("click", restartHandler);
+forwardButton.addEventListener("click", forwardHandler);

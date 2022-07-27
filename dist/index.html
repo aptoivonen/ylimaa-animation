@@ -83,8 +83,10 @@
         <!-- JS adds units here -->
       </svg>
       <div class="controls">
-        <button class="control-btn" id="beginning-btn" type="button"><<</button>
-        <button class="control-btn" id="back-btn" type="button"><</button>
+        <button class="control-btn" id="restart-btn" type="button"><<</button>
+        <button class="control-btn" id="back-btn" type="button" disabled>
+          <
+        </button>
         <button class="control-btn hide show" id="play-btn" type="button">
           PLAY
         </button>
@@ -92,7 +94,9 @@
           PAUSE
         </button>
         <button class="control-btn" id="step-btn" type="button">></button>
-        <button class="control-btn" id="end-btn" type="button">>></button>
+        <button class="control-btn" id="end-btn" type="button" disabled>
+          >>
+        </button>
       </div>
     </section>
   </body>
