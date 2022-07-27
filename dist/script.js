@@ -33,39 +33,37 @@ UNITS.forEach((unit) => {
 });
 
 // Animation
-const MAX_STEPS = 10;
 const STEP_DURATION = 1;
 let step = 1;
-const unitEls = Object.fromEntries(
-  UNITS.map((unit) => [unit.id, document.getElementById(unit.id)])
-);
-
-const tl = gsap.timeline();
-
 const animationSteps = [
   { jp3: { x: 100, y: -100 } },
   { jp3: { x: 0, y: -200 } },
-  { jp3: { x: -50, y: -300 }, "218-16": { x: 0, y: -50 } },
   {},
+  { jp3: { x: -50, y: -300 }, "218-16": { x: 0, y: -50 } },
 ];
 
+const unitEls = Object.fromEntries(
+  UNITS.map((unit) => [unit.id, document.getElementById(unit.id)])
+);
+const tl = gsap.timeline();
 let intervalId;
 let isPlaying = false;
 
 function takeStep() {
+  step++;
   if (!stepsLeft()) return;
-  animationData = animationSteps[step - 1];
+  updateBattleTime();
+  animationData = animationSteps[step - 2];
   if (animationData) {
-    Object.entries(animationData).forEach(([unitId, coord]) => {
+    Object.entries(animationData).forEach(([unitId, delta]) => {
       const unitEl = unitEls[unitId];
       tl.to(
         unitEl,
-        { duration: STEP_DURATION, x: coord.x, y: coord.y },
+        { duration: STEP_DURATION, x: delta.x, y: delta.y },
         `step-${step}`
       );
     });
   }
-  step++;
 }
 
 function play() {
@@ -91,11 +89,12 @@ function forward() {
 
 function restart() {
   step = 1;
+  updateBattleTime();
   forwardButton.disabled = false;
 }
 
 function stepsLeft() {
-  return step < MAX_STEPS;
+  return step - 2 < animationSteps.length;
 }
 
 function playHandler() {
@@ -126,11 +125,16 @@ function restartHandler() {
   restart();
 }
 
+function updateBattleTime() {
+  battleTime.textContent = step;
+}
+
 // Set up controls
 const playButton = document.getElementById("play-btn");
 const pauseButton = document.getElementById("pause-btn");
 const restartButton = document.getElementById("restart-btn");
 const forwardButton = document.getElementById("step-btn");
+const battleTime = document.getElementById("battle-time");
 
 playButton.addEventListener("click", playHandler);
 pauseButton.addEventListener("click", pauseHandler);

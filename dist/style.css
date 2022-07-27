@@ -59,6 +59,18 @@ body {
   background: lightblue;
 }
 
+.battle-time {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  display: block;
+  width: 2ch;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  background: #000;
+  color: white;
+}
+
 .info-section {
   padding: 1rem 0;
 }
