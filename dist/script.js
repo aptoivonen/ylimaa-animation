@@ -3,6 +3,7 @@ const UNITS = [
   { id: "hq-218", data: "svg/hq-218.svg", x: 700, y: 280 },
   { id: "218-I", data: "svg/218-I.svg", x: 800, y: 730 },
   { id: "218-II", data: "svg/218-II.svg", x: 520, y: 130 },
+  { id: "218-III", data: "svg/218-III.svg", x: 1100, y: 830 },
   { id: "jp3", data: "svg/jp3.svg", x: 250, y: 950 },
   { id: "jp5", data: "svg/jp5.svg", x: 980, y: 990 },
 ];
