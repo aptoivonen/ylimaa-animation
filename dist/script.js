@@ -1,12 +1,12 @@
 // Add new units here
 const UNITS = [
-  { id: "hq-218", data: "svg/hq-218.svg", x: 720, y: 300 },
-  { id: "hq-218-II", data: "svg/hq-218-II.svg", x: 560, y: 210 },
-  { id: "218-I", data: "svg/218-I.svg", x: 800, y: 730 },
-  { id: "218-II", data: "svg/218-II.svg", x: 520, y: 130 },
-  { id: "218-III", data: "svg/218-III.svg", x: 1100, y: 830 },
-  { id: "II-8", data: "svg/II-8.svg", x: 80, y: 450 },
-  { id: "218-16", data: "svg/218-16.svg", x: 1030, y: 950 },
+  { id: "ghq218", data: "svg/hq-218.svg", x: 720, y: 300 },
+  { id: "ghq218II", data: "svg/hq-218-II.svg", x: 560, y: 210 },
+  { id: "g218I", data: "svg/218-I.svg", x: 800, y: 730 },
+  { id: "g218II", data: "svg/218-II.svg", x: 520, y: 130 },
+  { id: "g218III", data: "svg/218-III.svg", x: 1100, y: 830 },
+  { id: "gII8", data: "svg/II-8.svg", x: 80, y: 450 },
+  { id: "g21816", data: "svg/218-16.svg", x: 1030, y: 950 },
   { id: "jp2", data: "svg/jp2.svg", x: -999, y: -999 },
   { id: "jp3", data: "svg/jp3.svg", x: 250, y: 1000 },
   { id: "jp4", data: "svg/jp4.svg", x: -999, y: -999 },
@@ -40,15 +40,20 @@ const animationSteps = [
   { jp3: { x: 100, y: -100 } },
   { jp3: { x: 0, y: -200 } },
   {},
-  { jp3: { x: -50, y: -300 }, "218-16": { x: 0, y: -50 } },
+  { jp3: { x: -50, y: -300 }, g21816: { x: 0, y: -50 } },
 ];
 
-const unitEls = Object.fromEntries(
-  UNITS.map((unit) => [unit.id, document.getElementById(unit.id)])
-);
-const tl = gsap.timeline();
+let tl;
 let intervalId;
 let isPlaying = false;
+
+makeTimeline();
+
+function makeTimeline() {
+  tl = gsap.timeline({
+    default: { duration: STEP_DURATION },
+  });
+}
 
 function takeStep() {
   step++;
@@ -57,12 +62,7 @@ function takeStep() {
   animationData = animationSteps[step - 2];
   if (animationData) {
     Object.entries(animationData).forEach(([unitId, delta]) => {
-      const unitEl = unitEls[unitId];
-      tl.to(
-        unitEl,
-        { duration: STEP_DURATION, x: delta.x, y: delta.y },
-        `step-${step}`
-      );
+      tl.to("#" + unitId, { x: delta.x, y: delta.y }, `step-${step}`);
     });
   }
 }
@@ -89,6 +89,10 @@ function forward() {
 }
 
 function restart() {
+  UNITS.forEach((unit) => {
+    document.getElementById(unit.id).removeAttribute("style");
+  });
+  tl.clear();
   step = 1;
   updateBattleTime();
   forwardButton.disabled = false;
