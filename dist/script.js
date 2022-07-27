@@ -1,6 +1,7 @@
 // Add new units here
 const UNITS = [
-  { id: "hq-218", data: "svg/hq-218.svg", x: 700, y: 280 },
+  { id: "hq-218", data: "svg/hq-218.svg", x: 720, y: 300 },
+  { id: "hq-218-II", data: "svg/hq-218-II.svg", x: 560, y: 210 },
   { id: "218-I", data: "svg/218-I.svg", x: 800, y: 730 },
   { id: "218-II", data: "svg/218-II.svg", x: 520, y: 130 },
   { id: "218-III", data: "svg/218-III.svg", x: 1100, y: 830 },
