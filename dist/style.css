@@ -64,9 +64,9 @@ body {
   top: 15px;
   left: 15px;
   display: block;
-  width: 2ch;
+  width: 7ch;
   padding: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
   background: #000;
   color: white;
 }

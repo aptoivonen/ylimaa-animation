@@ -34,6 +34,7 @@ UNITS.forEach((unit) => {
 
 // Animation
 const STEP_DURATION = 1;
+const START_DATE_STRING = "October 7, 1944 06:00:00";
 let step = 1;
 const animationSteps = [
   { jp3: { x: 100, y: -100 } },
@@ -74,7 +75,7 @@ function play() {
       forwardButton.disabled = true;
     }
     takeStep();
-  }, 1000 * STEP_DURATION);
+  }, Math.floor(1000 * STEP_DURATION));
 }
 
 function pause() {
@@ -126,7 +127,16 @@ function restartHandler() {
 }
 
 function updateBattleTime() {
-  battleTime.textContent = step;
+  battleTime.textContent = formatBattleTime(step - 1);
+}
+
+function formatBattleTime(step) {
+  const date = new Date(START_DATE_STRING);
+  date.setHours(step + date.getHours());
+  return new Intl.DateTimeFormat("fi", {
+    dateStyle: "short",
+    timeStyle: "short",
+  }).format(date);
 }
 
 // Set up controls
@@ -140,3 +150,5 @@ playButton.addEventListener("click", playHandler);
 pauseButton.addEventListener("click", pauseHandler);
 restartButton.addEventListener("click", restartHandler);
 forwardButton.addEventListener("click", forwardHandler);
+
+updateBattleTime();
