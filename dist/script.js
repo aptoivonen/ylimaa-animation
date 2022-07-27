@@ -5,8 +5,12 @@ const UNITS = [
   { id: "218-I", data: "svg/218-I.svg", x: 800, y: 730 },
   { id: "218-II", data: "svg/218-II.svg", x: 520, y: 130 },
   { id: "218-III", data: "svg/218-III.svg", x: 1100, y: 830 },
-  { id: "jp3", data: "svg/jp3.svg", x: 250, y: 950 },
-  { id: "jp5", data: "svg/jp5.svg", x: 980, y: 990 },
+  { id: "II-8", data: "svg/II-8.svg", x: 80, y: 450 },
+  { id: "218-16", data: "svg/218-16.svg", x: 1030, y: 950 },
+  { id: "jp2", data: "svg/jp2.svg", x: -999, y: -999 },
+  { id: "jp3", data: "svg/jp3.svg", x: 250, y: 1000 },
+  { id: "jp4", data: "svg/jp4.svg", x: -999, y: -999 },
+  { id: "jp5", data: "svg/jp5.svg", x: 1070, y: 1020 },
 ];
 
 // Populate map with units
