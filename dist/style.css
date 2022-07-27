@@ -1,3 +1,7 @@
+:root {
+  --yellow-color: #f6e1b9;
+}
+
 html,
 body {
   height: 100%;
@@ -27,8 +31,8 @@ body {
   padding: 0.5rem 1rem;
   font-size: 2rem;
   letter-spacing: -2px;
-  color: #fffffe;
-  background: #262626;
+  color: #444;
+  background: var(--yellow-color);
 }
 
 .main-header-date {
@@ -45,7 +49,7 @@ body {
   display: block;
   height: calc(100% - 2 * 10px);
   width: auto;
-  border: 10px solid #666;
+  border: 10px solid var(--yellow-color);
   overflow: hidden;
 }
 
@@ -56,7 +60,8 @@ body {
   display: flex;
   justify-content: center;
   padding: 0.3rem;
-  background: lightblue;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background: var(--yellow-color);
 }
 
 .battle-time {
@@ -67,8 +72,8 @@ body {
   width: 7ch;
   padding: 0.5rem;
   font-size: 1rem;
-  background: #000;
-  color: white;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background: var(--yellow-color);
 }
 
 .info-section {
