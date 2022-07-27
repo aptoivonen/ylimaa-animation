@@ -1,8 +1,55 @@
-<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" stroke-linecap="round" stroke-linejoin="round" fill-rule="evenodd" width="250.00" height="150.00" viewBox="0 0 5000 3000"><metadata><rdf:RDF><rdf:Description><dc:description>MSS/MilX-Export to SVG</dc:description><dc:publisher>gs-soft AG</dc:publisher></rdf:Description></rdf:RDF></metadata><defs><style type="text/css"><![CDATA[
-.ss0 {fill:gray;stroke:gray;stroke-width:40;}
-.ps0 {fill:none;stroke:gray;stroke-width:26;}
-.ss1 {fill:rgb(128,224,255);stroke:black;stroke-width:40;}
-.ps1 {fill:none;stroke:black;stroke-width:26;}
-.ts0 {font-family:Arial;font-size:2517px;font-weight:bold;fill:gray;text-anchor:middle;}
-.ts1 {font-family:Arial;font-size:2517px;font-weight:bold;fill:black;text-anchor:middle;}
-.ts2 {font-family:Arial;font-size:20px;fill:black;text-anchor:end;}]]></style><mask id="cr0" maskUnits="userSpaceOnUse" x="0" y="0" width="5000" height="3000" fill-rule="nonzero"><use xlink:href="#cp0" fill="white"/></mask><mask id="cr1" maskUnits="userSpaceOnUse" x="0" y="0" width="5000" height="3000" fill-rule="nonzero"><use xlink:href="#cp1" fill="white"/></mask><polygon id="cp0" points="1824,1073 4582,1073 4582,2927 1824,2927" shape-rendering="crispEdges"/><polygon id="cp1" points="1775,1024 4533,1024 4533,2878 1775,2878" shape-rendering="crispEdges"/></defs><g transform="matrix(1.8449 0 0 1.84377 1824.18 1079.76)"><rect x="0" y="0" width="1500" height="1000" class="ss0"/></g><g transform="matrix(0.244068 0 0 0.243902 1824.18 97.561)"><text x="5673" y="3514" class="ts0">I I</text></g><g mask="url(#cr0)"><g transform="matrix(1.8449 0 0 1.84377 1824.18 1079.76)"><polyline points="0,0 1500,1000" class="ps0"/><polyline points="1500,0 0,1000" class="ps0"/></g></g><g transform="matrix(1.8449 0 0 1.84377 1775.36 1030.98)"><rect x="0" y="0" width="1500" height="1000" class="ss1"/></g><g transform="matrix(0.244068 0 0 0.243902 1775.36 48.7805)"><text x="5673" y="3514" class="ts1">I I</text></g><g mask="url(#cr1)"><g transform="matrix(1.8449 0 0 1.84377 1775.36 1030.98)"><polyline points="0,0 1500,1000" class="ps1"/><polyline points="1500,0 0,1000" class="ps1"/></g></g><g transform="matrix(24.4068 0 0 24.3902 340 0)"><text x="49" y="111" class="ts2">JP3</text></g></svg>
+<svg 
+  xmlns="http://www.w3.org/2000/svg" 
+  xmlns:xlink="http://www.w3.org/1999/xlink" 
+  stroke-linecap="round" 
+  stroke-linejoin="round" 
+  fill-rule="evenodd" 
+  width="250.00" 
+  height="150.00" 
+  viewBox="0 0 5000 3000">
+  <defs>
+    <style type="text/css">
+      .ss0 {fill:gray;stroke:gray;stroke-width:40;}
+      .ps0 {fill:none;stroke:gray;stroke-width:26;}
+      .ss1 {fill:rgb(128,224,255);stroke:black;stroke-width:40;}
+      .ps1 {fill:none;stroke:black;stroke-width:26;}
+      .ts0 {font-family:Arial;font-size:2517px;font-weight:bold;fill:gray;text-anchor:middle;}
+      .ts1 {font-family:Arial;font-size:2517px;font-weight:bold;fill:black;text-anchor:middle;}
+      .ts2 {font-family:Arial;font-size:20px;fill:black;text-anchor:end;
+    </style>
+    <mask id="cr0" maskUnits="userSpaceOnUse" x="0" y="0" width="5000" height="3000" fill-rule="nonzero">
+      <use xlink:href="#cp0" fill="white"/>
+    </mask>
+    <mask id="cr1" maskUnits="userSpaceOnUse" x="0" y="0" width="5000" height="3000" fill-rule="nonzero">
+      <use xlink:href="#cp1" fill="white"/>
+    </mask>
+    <polygon id="cp0" points="1824,1073 4582,1073 4582,2927 1824,2927" shape-rendering="crispEdges"/>
+    <polygon id="cp1" points="1775,1024 4533,1024 4533,2878 1775,2878" shape-rendering="crispEdges"/>
+  </defs>
+  <g transform="matrix(1.8449 0 0 1.84377 1824.18 1079.76)">
+    <rect x="0" y="0" width="1500" height="1000" class="ss0"/>
+  </g>
+  <g transform="matrix(0.244068 0 0 0.243902 1824.18 97.561)">
+    <text x="5673" y="3514" class="ts0">I I</text>
+  </g>
+  <g mask="url(#cr0)"><g transform="matrix(1.8449 0 0 1.84377 1824.18 1079.76)">
+    <polyline points="0,0 1500,1000" class="ps0"/>
+    <polyline points="1500,0 0,1000" class="ps0"/>
+  </g>
+  </g>
+  <g transform="matrix(1.8449 0 0 1.84377 1775.36 1030.98)">
+    <rect x="0" y="0" width="1500" height="1000" class="ss1"/>
+  </g>
+  <g transform="matrix(0.244068 0 0 0.243902 1775.36 48.7805)">
+    <text x="5673" y="3514" class="ts1">I I</text>
+  </g>
+  <g mask="url(#cr1)">
+    <g transform="matrix(1.8449 0 0 1.84377 1775.36 1030.98)">
+      <polyline points="0,0 1500,1000" class="ps1"/>
+      <polyline points="1500,0 0,1000" class="ps1"/>
+    </g>
+  </g>
+  <g transform="matrix(24.4068 0 0 24.3902 340 0)">
+    <text x="49" y="111" class="ts2">JP3</text>
+  </g>
+</svg>
