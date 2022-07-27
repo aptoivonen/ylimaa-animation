@@ -7,7 +7,7 @@ const UNITS = [
   { id: "g218III", data: "svg/218-III.svg", x: 1100, y: 830 },
   { id: "gII8", data: "svg/II-8.svg", x: 80, y: 450 },
   { id: "g21816", data: "svg/218-16.svg", x: 1030, y: 950 },
-  { id: "jp2", data: "svg/jp2.svg", x: 370, y: 800, opacity: 0 },
+  { id: "jp2", data: "svg/jp2.svg", x: 270, y: 900, opacity: 0 },
   { id: "jp3", data: "svg/jp3.svg", x: 270, y: 1000 },
   { id: "jp4", data: "svg/jp4.svg", x: -999, y: -999 },
   { id: "jp5", data: "svg/jp5.svg", x: 1070, y: 1020 },
@@ -110,6 +110,11 @@ function restart() {
   tl.clear();
   UNITS.forEach((unit) => {
     document.getElementById(unit.id).removeAttribute("style");
+    if ("opacity" in unit) {
+      document
+        .getElementById(unit.id)
+        .setAttribute("style", `opacity: ${unit.opacity}`);
+    }
     tl.set("#" + unit.id, { x: 0, y: 0 });
   });
   step = 1;
