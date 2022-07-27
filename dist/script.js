@@ -67,14 +67,21 @@ function takeStep() {
   }
 }
 
+function animationEnd() {
+  clearInterval(intervalId);
+  forwardButton.disabled = true;
+  playButton.classList.add("show");
+  pauseButton.classList.remove("show");
+}
+
 function play() {
   isPlaying = true;
   intervalId = setInterval(() => {
-    if (!stepsLeft()) {
-      clearInterval(intervalId);
-      forwardButton.disabled = true;
-    }
     takeStep();
+    if (!stepsLeft()) {
+      animationEnd();
+      return;
+    }
   }, Math.floor(1000 * STEP_DURATION));
 }
 
@@ -89,10 +96,11 @@ function forward() {
 }
 
 function restart() {
+  tl.clear();
   UNITS.forEach((unit) => {
     document.getElementById(unit.id).removeAttribute("style");
+    tl.set("#" + unit.id, { x: 0, y: 0 });
   });
-  tl.clear();
   step = 1;
   updateBattleTime();
   forwardButton.disabled = false;
