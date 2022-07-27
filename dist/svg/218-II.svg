@@ -18,8 +18,8 @@
       .ps1 {fill:none;stroke:black;stroke-width:26;}
       .ts0 {font-family:Arial;font-size:2517px;font-weight:bold;fill:gray;text-anchor:middle;}
       .ts1 {font-family:Arial;font-size:2517px;font-weight:bold;fill:black;text-anchor:middle;}
-      .ts2 {font-family:Arial;font-size:20px;fill:black;text-anchor:end;}
-      .ts3 {font-family:Arial;font-size:20px;fill:black;}
+      .ts2 {font-family:Arial;font-size:30px;font-weight:bold;fill:black;text-anchor:end;}
+      .ts3 {font-family:Arial;font-size:30px;font-weight:bold;fill:black;}
     </style>
     <mask id="cr0" maskUnits="userSpaceOnUse" x="0" y="0" width="5000" height="3000" fill-rule="nonzero">
       <use xlink:href="#cp0" fill="white"/>
