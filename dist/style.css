@@ -1,5 +1,7 @@
 :root {
   --yellow-color: #f6e1b9;
+  --german-color: #888;
+  --finnish-color: rgb(128, 224, 255);
 }
 
 html,
@@ -81,18 +83,29 @@ body {
 }
 
 .unit-info {
+  position: relative;
   margin: 0 0 1rem;
   padding: 0.5rem 1rem;
+  background: var(--yellow-color);
 }
 
-.unit-info.german {
-  color: white;
-  background: #888;
+.unit-info::before {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  width: 0.7rem;
+  height: 0.7rem;
+  content: "";
 }
 
-.unit-info.finnish {
-  color: white;
-  background: blue;
+.unit-info.german::before {
+  background: var(--german-color);
+}
+
+.unit-info.finnish::before {
+  background: var(--finnish-color);
 }
 
 .unit-list img {
