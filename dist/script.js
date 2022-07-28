@@ -1,6 +1,7 @@
 // Add new units here
 const UNITS = [
   { id: "ghq218", data: "svg/hq-218.svg" },
+  { id: "ghq218I", data: "svg/hq-218-I.svg" },
   { id: "ghq218II", data: "svg/hq-218-II.svg" },
   { id: "g218I", data: "svg/218-I.svg" },
   { id: "g218II", data: "svg/218-II.svg" },
@@ -53,6 +54,7 @@ const animationSteps = [
     jp4: { x: 360, y: 900, opacity: 0 },
     jp5: { x: 1130, y: 1080 },
     ghq218: { x: 770, y: 350 },
+    ghq218I: { x: 790, y: 570 },
     ghq218II: { x: 630, y: 210 },
     g218I: { x: 800, y: 730 },
     g218II: { x: 560, y: 196 },
