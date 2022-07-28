@@ -66,6 +66,12 @@ body {
   background: var(--yellow-color);
 }
 
+.control-btn {
+  width: 10ch;
+  font-family: inherit;
+  font-weight: bold;
+}
+
 .battle-time {
   position: absolute;
   top: 15px;
