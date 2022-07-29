@@ -153,11 +153,18 @@ body {
 
 .unit-list {
   display: flex;
+  margin-left: 1rem;
 }
 
 .unit-list svg {
-  width: 70px;
+  width: 60px;
   height: auto;
+}
+
+@media only screen and (min-width: 1050px) {
+  .unit-list svg {
+    width: 70px;
+  }
 }
 
 .footer {
