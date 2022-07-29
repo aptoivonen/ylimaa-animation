@@ -71,7 +71,7 @@ function setupComplete(tl) {
 }
 
 function updateStep(step, stepCallback, tl) {
-  tl.call(stepCallback(step));
+  tl.call(() => stepCallback(step));
 }
 
 function animationEnd(animationEndCallback, tl) {
