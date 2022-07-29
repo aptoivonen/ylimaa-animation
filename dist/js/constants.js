@@ -15,7 +15,7 @@ export const ECHELON = {
   regiment: "regiment",
 };
 
-export const STEP_DURATION = 1;
+export const STEP_DURATION = 0.3;
 export const EASE = "none";
 export const START_DATE_STRING = "October 7, 1944 06:00:00";
 export const X_MAP_OFFSET = -50;
