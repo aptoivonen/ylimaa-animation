@@ -135,12 +135,24 @@ body {
 }
 
 .unit-symbol {
+  display: block;
   width: 140px;
   height: auto;
+  overflow: visible;
 }
 
-.german .ss1 {
-  fill: #888;
+.unit-symbol .ts2,
+.unit-symbol .ts3 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.unit-symbol.german .ss1 {
+  fill: var(--german-color);
+}
+
+.unit-symbol.finnish .ss1 {
+  fill: var(--finnish-color);
 }
 
 .hide:not(.show) {
