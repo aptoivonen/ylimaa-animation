@@ -18,7 +18,7 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-@media (min-width: 1000px) {
+@media only screen and (min-width: 1050px) {
   body {
     flex-direction: row;
   }
@@ -62,7 +62,7 @@ body {
   overflow: hidden;
 }
 
-@media (min-width: 1000px) {
+@media only screen and (min-width: 1050px) {
   .map {
     height: calc(100% - 2 * 10px);
     width: auto;
