@@ -88,8 +88,8 @@ body {
   background: var(--yellow-color);
 }
 
-.info-section {
-  padding: 1rem 0;
+.affiliation-section {
+  margin-bottom: 1rem;
 }
 
 .unit-info {
