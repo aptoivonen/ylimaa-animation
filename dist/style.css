@@ -126,11 +126,6 @@ body {
   width: 70px;
   height: auto;
 }
-/* get rid of later */
-.unit-list img {
-  width: 70px;
-  height: auto;
-}
 
 .footer {
   margin-top: auto;
@@ -144,10 +139,6 @@ body {
 }
 
 /* SVG styles */
-
-.symbol-wrapper {
-  overflow: visible;
-}
 
 .unit-symbol {
   display: block;
