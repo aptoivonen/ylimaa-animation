@@ -126,5 +126,6 @@ export const ANIMATION_STEPS = [
   { jp2: { x: 518, y: 686 } },
   {},
   {},
-  {}, // 7.10 klo 23
+  {}, 
+  {}, // 8.10 klo 00
 ];
