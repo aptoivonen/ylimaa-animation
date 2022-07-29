@@ -7,6 +7,7 @@ import {
 import { createAnimation } from "./animation.js";
 import { populateWithUnits, createUnitSvg } from "./mapUtils.js";
 import { ANIMATION_STEPS, UNITS } from "./data.js";
+import { formatBattleTime } from "./services.js";
 
 function populateUnitLists(germanList, finnishList) {
   createUnitSvg(germanList, {
@@ -132,15 +133,6 @@ function showPauseButton() {
 
 function updateBattleTime(step) {
   battleTime.textContent = formatBattleTime(step);
-}
-
-function formatBattleTime(step) {
-  const date = new Date(START_DATE_STRING);
-  date.setHours(step + date.getHours());
-  return new Intl.DateTimeFormat("fi", {
-    dateStyle: "short",
-    timeStyle: "short",
-  }).format(date);
 }
 
 // Set up controls
