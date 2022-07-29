@@ -1,13 +1,48 @@
-import {
-  START_DATE_STRING,
-  UNIT_TYPES,
-  AFFILIATION,
-  ECHELON,
-} from "./constants.js";
+import { UNIT_TYPES, AFFILIATION, ECHELON } from "./constants.js";
 import { createAnimation } from "./animation.js";
 import { populateWithUnits, createUnitSvg } from "./mapUtils.js";
 import { ANIMATION_STEPS, UNITS } from "./data.js";
 import { formatBattleTime } from "./services.js";
+
+// Set up controls
+const restartButton = document.getElementById("restart-btn");
+const playButton = document.getElementById("play-btn");
+const pauseButton = document.getElementById("pause-btn");
+const reverseButton = document.getElementById("reverse-btn");
+const battleTime = document.getElementById("battle-time");
+const germanUnitList = document.getElementById("german-unit-list");
+const finnishUnitList = document.getElementById("finnish-unit-list");
+const map = document.getElementById("map");
+const progress = document.getElementById("progress");
+
+restartButton.addEventListener("click", restartHandler);
+playButton.addEventListener("click", playHandler);
+pauseButton.addEventListener("click", pauseHandler);
+reverseButton.addEventListener("click", reverseHandler);
+
+// create unit svgs
+populateWithUnits(map, UNITS);
+
+// create unit info lists
+populateUnitLists(germanUnitList, finnishUnitList);
+
+// set up time
+updateBattleTime(0);
+
+// create animation
+const tl = createAnimation(
+  ANIMATION_STEPS,
+  (step) => {
+    updateBattleTime(step);
+  },
+  () => {
+    endHandler();
+  },
+  (tl) => {
+    const percentage = 100 * tl.progress();
+    updateProgress(percentage);
+  }
+);
 
 function populateUnitLists(germanList, finnishList) {
   createUnitSvg(germanList, {
@@ -135,37 +170,6 @@ function updateBattleTime(step) {
   battleTime.textContent = formatBattleTime(step);
 }
 
-// Set up controls
-const restartButton = document.getElementById("restart-btn");
-const playButton = document.getElementById("play-btn");
-const pauseButton = document.getElementById("pause-btn");
-const reverseButton = document.getElementById("reverse-btn");
-const battleTime = document.getElementById("battle-time");
-
-restartButton.addEventListener("click", restartHandler);
-playButton.addEventListener("click", playHandler);
-pauseButton.addEventListener("click", pauseHandler);
-reverseButton.addEventListener("click", reverseHandler);
-
-// create unit svgs
-populateWithUnits(document.getElementById("map"), UNITS);
-
-// create unit info lists
-populateUnitLists(
-  document.getElementById("german-unit-list"),
-  document.getElementById("finnish-unit-list")
-);
-
-// set up time
-updateBattleTime(0);
-
-// create animation
-const tl = createAnimation(
-  ANIMATION_STEPS,
-  (step) => {
-    updateBattleTime(step);
-  },
-  () => {
-    endHandler();
-  }
-);
+function updateProgress(percentage) {
+  progress.value = percentage;
+}

@@ -88,6 +88,14 @@ body {
   background: var(--yellow-color);
 }
 
+.progress {
+  position: absolute;
+  bottom: 7px;
+  left: 10px;
+  width: calc(100% - 2 * 10px);
+  height: 10px;
+}
+
 .affiliation-section {
   margin-bottom: 1rem;
 }
