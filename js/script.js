@@ -39,7 +39,9 @@ const tl = createAnimation(
     endHandler();
   },
   (tl) => {
-    const percentage = 100 * tl.progress();
+    const steps = ANIMATION_STEPS.length;
+    const percentage =
+      (steps / (steps - 1)) * (100 * tl.progress() - 100 * (1 / steps));
     updateProgress(percentage);
   }
 );
