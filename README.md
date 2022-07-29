@@ -4,10 +4,18 @@ Create an animation about the battle of Ylimaa.
 
 ## Technologies used
 
-- Extract the map as SVG from Openstreetmap
-- Create map symbols as SVGs from symbol.army
-- Animated with GSAP library
+- Extract the map as SVG from [Openstreetmap](https://www.openstreetmap.org/#map=12/66.1358/26.2058)
+- Create map symbols as SVGs from [symbol.army](https://www.symbol.army/about/en.html)
+- Animated with [GSAP](https://greensock.com/gsap/) library
 - Basic html, css, and javascript
+
+## Roadmap
+
+- [x] Familiarize with GSAP
+- [x] Familiarize with SVG basics
+- [] Create all unit SVGs
+- [] Create all animation steps
+- [] Fill out unit info
 
 ## Issues
 
