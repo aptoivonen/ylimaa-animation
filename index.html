@@ -12,7 +12,7 @@
     />
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-    <script src="script.js" defer></script>
+    <script src="js/script.js" type="module" defer></script>
     <title>Ylimaan taistelu</title>
   </head>
   <body>
@@ -25,30 +25,15 @@
       </header>
 
       <section class="info-section">
-        <div>
+        <div class="affiliation-section">
           <p class="unit-info german">218. Gebirgs-jäger-regiment</p>
           <p>Komentaja: eversti Emil Schuler</p>
-          <div class="unit-list">
-            <img
-              src="svg/218.svg"
-              alt="218 regiment icon"
-              style="margin-bottom: 1rem"
-            />
-            <img src="svg/218-I.svg" alt="218-I batallion icon" />
-            <img src="svg/218-II.svg" alt="218-II batallion icon" />
-            <img src="svg/218-III.svg" alt="218-III batallion icon" />
-            <img src="svg/218-16.svg" alt="218-16 company icon" />
-          </div>
+          <div id="german-unit-list" class="unit-list"></div>
         </div>
-        <div>
+        <div class="affiliation-section">
           <p class="unit-info finnish">Jääkäriprikaati</p>
           <p>Komentaja: ?</p>
-          <div class="unit-list">
-            <img src="svg/jp2.svg" alt="2. Jääkäripataljoona icon" />
-            <img src="svg/jp3.svg" alt="3. Jääkäripataljoona icon" />
-            <img src="svg/jp4.svg" alt="4. Jääkäripataljoona icon" />
-            <img src="svg/jp5.svg" alt="5. Jääkäripataljoona icon" />
-          </div>
+          <div id="finnish-unit-list" class="unit-list"></div>
         </div>
       </section>
 
@@ -82,7 +67,6 @@
         </foreignObject>
 
         <!-- JS adds units here -->
-      </svg>
       <div class="controls">
         <button class="control-btn" id="restart-btn" type="button">
           Restart
@@ -97,6 +81,8 @@
           Reverse
         </button>
       </div>
+
+      <progress id="progress" class="progress" max="100" value="0"></progress>
     </section>
   </body>
 </html>
