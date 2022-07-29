@@ -131,7 +131,6 @@ function showPauseButton() {
 }
 
 function updateBattleTime(step) {
-  console.log("update time", step);
   battleTime.textContent = formatBattleTime(step);
 }
 
