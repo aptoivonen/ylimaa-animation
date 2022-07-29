@@ -8,9 +8,14 @@ import {
 export function createAnimation(
   animationArr,
   stepCallback = Function.prototype,
-  animationEndCallback = Function.prototype
+  animationEndCallback = Function.prototype,
+  updateCallback = Function.prototype
 ) {
+  function handleUpdate() {
+    updateCallback(tl);
+  }
   const tl = gsap.timeline({
+    onUpdate: handleUpdate,
     defaults: {
       duration: STEP_DURATION,
       ease: EASE,
