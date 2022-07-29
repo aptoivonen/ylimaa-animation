@@ -12,9 +12,16 @@ body {
 
 body {
   display: flex;
+  flex-direction: column;
   margin: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
+}
+
+@media (min-width: 1000px) {
+  body {
+    flex-direction: row;
+  }
 }
 
 .main {
@@ -49,10 +56,17 @@ body {
 
 .map {
   display: block;
-  height: calc(100% - 2 * 10px);
-  width: auto;
+  height: auto;
+  width: calc(100% - 2 * 10px);
   border: 10px solid var(--yellow-color);
   overflow: hidden;
+}
+
+@media (min-width: 1000px) {
+  .map {
+    height: calc(100% - 2 * 10px);
+    width: auto;
+  }
 }
 
 .controls {
