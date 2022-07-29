@@ -13,9 +13,9 @@ Create an animation about the battle of Ylimaa.
 
 - [x] Familiarize with GSAP
 - [x] Familiarize with SVG basics
-- [] Create all unit SVGs
-- [] Create all animation steps
-- [] Fill out unit info
+- [ ] Create all unit SVGs
+- [ ] Create all animation steps
+- [ ] Fill out unit info
 
 ## Issues
 
