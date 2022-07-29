@@ -87,6 +87,14 @@ export const UNITS = [
     unitName: "JP3",
   },
   {
+    id: "jp3_1",
+    type: UNIT_TYPES.infantry,
+    affiliation: AFFILIATION.Finnish,
+    echelon: ECHELON.company,
+    unitName: "1",
+    parentName: "JP3",
+  },
+  {
     id: "jp4",
     type: UNIT_TYPES.infantry,
     affiliation: AFFILIATION.Finnish,
@@ -108,6 +116,7 @@ export const ANIMATION_STEPS = [
     jp2: { x: 340, y: 970, opacity: 0 },
     jp2_3: {x: 518, y: 686 ,opacity: 0},
     jp3: { x: 350, y: 1033 },
+    jp3_1: { x: 305, y: 562, opacity: 0 },
     jp4: { x: 385, y: 897, opacity: 0 },
     jp5: { x: 1130, y: 1080 },
     ghq218: { x: 770, y: 350 },
@@ -147,5 +156,7 @@ export const ANIMATION_STEPS = [
   {jp2_3: {x: 692, y: 480}},
   {},
   {},
-  {jp3: {x: 315, y: 488}, jp2: {x: 575, y:627}},
+  {jp3: {x: 315, y: 488}, jp2: {x: 575, y:627}, jp3_1: {opacity: 1}},
+  {jp3_1:{x: 282, y: 554}, jp3: {x: 317, y:459}, jp2: {x:641 , y:535}, gII8: {x: 224, y: 463}}, // 8.10 klo 12.00
+  {gII8: { x: 205, y: 467 }, jp2: {x: 673, y: 483}, jp2_3: {opacity: 0}, jp4: {x: 385, y: 835}}
 ];
