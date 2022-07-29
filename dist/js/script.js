@@ -1,50 +1,83 @@
-import { START_DATE_STRING } from "./constants.js";
+import {
+  START_DATE_STRING,
+  UNIT_TYPES,
+  AFFILIATION,
+  ECHELON,
+} from "./constants.js";
 import { createAnimation } from "./animation.js";
-import { populateWithUnits } from "./mapUtils.js";
+import { populateWithUnits, createUnitSvg } from "./mapUtils.js";
 import { ANIMATION_STEPS, UNITS } from "./data.js";
 
-// Add new units here
-// const UNITS = [
-//   { id: "ghq218", data: "svg/hq-218.svg" },
-//   { id: "ghq218I", data: "svg/hq-218-I.svg" },
-//   { id: "ghq218II", data: "svg/hq-218-II.svg" },
-//   { id: "g218I", data: "svg/218-I.svg" },
-//   { id: "g218II", data: "svg/218-II.svg" },
-//   { id: "g218III", data: "svg/218-III.svg" },
-//   { id: "gII8", data: "svg/II-8.svg" },
-//   { id: "g21816", data: "svg/218-16.svg" },
-//   { id: "jp2", data: "svg/jp2.svg" },
-//   { id: "jp3", data: "svg/jp3.svg" },
-//   { id: "jp4", data: "svg/jp4.svg" },
-//   { id: "jp5", data: "svg/jp5.svg" },
-// ];
+function populateUnitLists(germanList, finnishList) {
+  createUnitSvg(germanList, {
+    id: "",
+    type: UNIT_TYPES.mountainInfantry,
+    affiliation: AFFILIATION.German,
+    echelon: ECHELON.regiment,
+    unitName: "218",
+  });
+  createUnitSvg(germanList, {
+    id: "",
+    type: UNIT_TYPES.mountainInfantry,
+    affiliation: AFFILIATION.German,
+    echelon: ECHELON.battalion,
+    unitName: "I",
+    parentName: "218",
+  });
+  createUnitSvg(germanList, {
+    id: "",
+    type: UNIT_TYPES.mountainInfantry,
+    affiliation: AFFILIATION.German,
+    echelon: ECHELON.battalion,
+    unitName: "II",
+    parentName: "218",
+  });
+  createUnitSvg(germanList, {
+    id: "",
+    type: UNIT_TYPES.mountainInfantry,
+    affiliation: AFFILIATION.German,
+    echelon: ECHELON.battalion,
+    unitName: "III",
+    parentName: "218",
+  });
+  createUnitSvg(germanList, {
+    id: "",
+    type: UNIT_TYPES.mountainInfantry,
+    affiliation: AFFILIATION.German,
+    echelon: ECHELON.battalion,
+    unitName: "16",
+    parentName: "218",
+  });
 
-// TODO: add german units and svg in creation function !
-
-// function populateWithUnits() {
-//   // Populate map with units
-//   const map = document.getElementById("map");
-//   // Required by foreignObject creation
-//   const ns = "http://www.w3.org/2000/svg";
-
-//   UNITS.forEach((unit) => {
-//     const newUnitElement = document.createElementNS(ns, "foreignObject");
-//     newUnitElement.setAttribute("class", "symbol-wrapper");
-//     // newUnitElement.setAttribute("x", unit.x);
-//     // newUnitElement.setAttribute("y", unit.y);
-//     newUnitElement.setAttribute("x", 0);
-//     newUnitElement.setAttribute("y", 0);
-//     const obj = document.createElement("object");
-//     obj.className = "unit-symbol";
-//     obj.id = unit.id;
-//     obj.data = unit.data;
-//     obj.type = "image/svg+xml";
-//     newUnitElement.appendChild(obj);
-//     map.appendChild(newUnitElement);
-//   });
-// }
-
-// Animation
+  createUnitSvg(finnishList, {
+    id: "",
+    type: UNIT_TYPES.infantry,
+    affiliation: AFFILIATION.Finnish,
+    echelon: ECHELON.battalion,
+    unitName: "JP2",
+  });
+  createUnitSvg(finnishList, {
+    id: "",
+    type: UNIT_TYPES.infantry,
+    affiliation: AFFILIATION.Finnish,
+    echelon: ECHELON.battalion,
+    unitName: "JP3",
+  });
+  createUnitSvg(finnishList, {
+    id: "",
+    type: UNIT_TYPES.infantry,
+    affiliation: AFFILIATION.Finnish,
+    echelon: ECHELON.battalion,
+    unitName: "JP4",
+  });
+  createUnitSvg(finnishList, {
+    id: "",
+    type: UNIT_TYPES.infantry,
+    affiliation: AFFILIATION.Finnish,
+    echelon: ECHELON.battalion,
+    unitName: "JP5",
+  });
+}
 
 function playHandler() {
   if (tl.reversed()) {
@@ -98,6 +131,7 @@ function showPauseButton() {
 }
 
 function updateBattleTime(step) {
+  console.log("update time", step);
   battleTime.textContent = formatBattleTime(step);
 }
 
@@ -122,10 +156,19 @@ playButton.addEventListener("click", playHandler);
 pauseButton.addEventListener("click", pauseHandler);
 reverseButton.addEventListener("click", reverseHandler);
 
+// create unit svgs
 populateWithUnits(document.getElementById("map"), UNITS);
 
+// create unit info lists
+populateUnitLists(
+  document.getElementById("german-unit-list"),
+  document.getElementById("finnish-unit-list")
+);
+
+// set up time
 updateBattleTime(0);
 
+// create animation
 const tl = createAnimation(
   ANIMATION_STEPS,
   (step) => {
