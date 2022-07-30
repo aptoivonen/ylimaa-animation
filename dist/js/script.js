@@ -32,6 +32,16 @@ updateBattleTime(0);
 // create animation
 const tl = createAnimation(
   ANIMATION_STEPS,
+  (tl) => {
+    if (tl.reversed()) {
+      tl.reverse();
+      tl.pause();
+      showPlayButton();
+      toggleDisableButton(reverseButton, true);
+      toggleDisableButton(playButton, false);
+      toggleDisableButton(restartButton, true);
+    }
+  },
   (step) => {
     updateBattleTime(step);
   },
@@ -82,7 +92,7 @@ function populateUnitLists(germanList, finnishList) {
     id: "",
     type: UNIT_TYPES.mountainInfantry,
     affiliation: AFFILIATION.German,
-    echelon: ECHELON.battalion,
+    echelon: ECHELON.company,
     unitName: "16",
     parentName: "218",
   });
@@ -123,10 +133,12 @@ function playHandler() {
   }
   if (tl.paused()) {
     tl.resume();
-    return;
+  } else {
+    tl.play();
   }
+  toggleDisableButton(reverseButton, false);
+  toggleDisableButton(restartButton, false);
   showPauseButton();
-  tl.play();
 }
 
 function pauseHandler() {
@@ -139,23 +151,23 @@ function restartHandler() {
   if (tl.reversed()) {
     tl.reverse();
   }
-  toggleDisablePlayButton(false);
+  toggleDisableButton(playButton, false);
   showPauseButton();
 }
 
 function reverseHandler() {
   tl.reverse();
-  toggleDisablePlayButton(false);
   showPauseButton();
+  toggleDisableButton(playButton, false);
 }
 
 function endHandler() {
   showPlayButton();
-  toggleDisablePlayButton(true);
+  toggleDisableButton(playButton, true);
 }
 
-function toggleDisablePlayButton(isDisabled) {
-  playButton.disabled = isDisabled;
+function toggleDisableButton(button, isDisabled) {
+  button.disabled = isDisabled;
 }
 
 function showPlayButton() {

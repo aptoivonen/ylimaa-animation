@@ -7,6 +7,7 @@ import {
 
 export function createAnimation(
   animationArr,
+  setUpCallback = Function.prototype,
   stepCallback = Function.prototype,
   animationEndCallback = Function.prototype,
   updateCallback = Function.prototype
@@ -24,14 +25,14 @@ export function createAnimation(
   });
 
   animationArr.forEach((animationEntry, index) => {
-    createAnimationStep(animationEntry, index, stepCallback, tl);
+    createAnimationStep(animationEntry, index, setUpCallback, stepCallback, tl);
   });
 
   animationEnd(animationEndCallback, tl);
   return tl;
 }
 
-function createAnimationStep(data, step, stepCallback, tl) {
+function createAnimationStep(data, step, setUpCallback, stepCallback, tl) {
   Object.entries(data).forEach(([unitId, animationVars]) => {
     const unitSelector = "#" + unitId;
     let rect;
@@ -61,17 +62,14 @@ function createAnimationStep(data, step, stepCallback, tl) {
   }
   // first step? set up units
   if (step === 0) {
-    setupComplete(tl);
+    setupComplete(setUpCallback, tl);
   }
   updateStep(step, stepCallback, tl);
 }
 
-function setupComplete(tl) {
+function setupComplete(setUpCallback, tl) {
   tl.call(() => {
-    if (tl.reversed()) {
-      tl.reverse();
-      tl.pause();
-    }
+    setUpCallback(tl);
   });
 }
 
