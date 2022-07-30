@@ -222,6 +222,7 @@ body {
   padding: 5px 0;
   color: #fff;
   font-weight: normal;
+  font-size: 0.8rem;
   text-align: center;
   background-color: var(--control-bg-color);
   border-radius: 6px;

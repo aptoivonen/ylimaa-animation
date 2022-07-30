@@ -139,11 +139,13 @@ function playHandler() {
   toggleDisableButton(reverseButton, false);
   toggleDisableButton(restartButton, false);
   showPauseButton();
+  playButton.blur();
 }
 
 function pauseHandler() {
   showPlayButton();
   if (!tl.paused()) tl.pause();
+  pauseButton.blur();
 }
 
 function restartHandler() {
@@ -153,12 +155,14 @@ function restartHandler() {
   }
   toggleDisableButton(playButton, false);
   showPauseButton();
+  restartButton.blur();
 }
 
 function reverseHandler() {
   tl.reverse();
   showPauseButton();
   toggleDisableButton(playButton, false);
+  reverseButton.blur();
 }
 
 function endHandler() {
