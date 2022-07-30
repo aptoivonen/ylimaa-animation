@@ -8,7 +8,7 @@
   --light-color: var(--brown-color);
   --german-color: #888;
   --finnish-color: rgb(128, 224, 255);
-  --time-bg-color: rgba(0, 0, 0, 0.4);
+  --control-bg-color: rgba(0, 0, 0, 0.4);
   --disabled-color: #ccc;
 }
 
@@ -93,10 +93,6 @@ body {
   border-radius: 0.5rem;
 }
 
-.hide:not(.show) {
-  display: none;
-}
-
 .control-btn {
   width: 2.5rem;
   height: 2.5rem;
@@ -104,8 +100,12 @@ body {
   font-size: 1rem;
   font-weight: bold;
   border: none;
-  background: var(--time-bg-color);
+  background: var(--control-bg-color);
   fill: var(--white-color);
+}
+
+.control-btn:focus {
+  outline: 1px solid rgb(16, 16, 16);
 }
 
 .control-btn:disabled {
@@ -133,7 +133,7 @@ body {
   padding: 0.4rem;
   font-size: 1rem;
   font-weight: bold;
-  background: var(--time-bg-color);
+  background: var(--control-bg-color);
   color: var(--white-color);
 }
 
@@ -199,6 +199,50 @@ body {
   margin-top: auto;
   padding: 1rem;
   text-align: center;
+}
+
+/* Utility styles */
+
+.hide:not(.show) {
+  display: none;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltiptext {
+  --tooltip-width: 120px;
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  z-index: 1;
+  width: var(--tooltip-width);
+  margin-left: calc(var(--tooltip-width) / -2);
+  padding: 5px 0;
+  color: #fff;
+  font-weight: normal;
+  text-align: center;
+  background-color: var(--control-bg-color);
+  border-radius: 6px;
+  visibility: hidden;
+  outline: none;
+}
+
+.tooltip:hover .tooltiptext,
+.tooltip:focus .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--control-bg-color) transparent transparent transparent;
 }
 
 /* SVG styles */
