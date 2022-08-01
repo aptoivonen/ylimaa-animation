@@ -20,7 +20,16 @@ See live [animation](https://aptoivonen.github.io/ylimaa-animation/) here.
 
 - [x] Familiarize with GSAP
 - [x] Familiarize with SVG basics
-- [ ] Create all symbol SVGs - [x] units - [ ] supply - [ ] artillery - [ ] boundaries - [ ] strongpoints - [ ] battle - [ ] air defense ? - [ ] artillery barrage ? - [ ] bridge
+- [ ] Create all symbol SVGs
+  - [x] units
+  - [ ] supply
+  - [ ] artillery
+  - [ ] boundaries
+  - [ ] strongpoints
+  - [ ] battle
+  - [ ] air defense ?
+  - [ ] artillery barrage ?
+  - [ ] bridge
 - [ ] Create all animation steps
 - [ ] Fill out unit info
 - [ ] Clean map SVG and highlight important features
